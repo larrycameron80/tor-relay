@@ -7,6 +7,7 @@ Based off Jessie Frazelle's blog
 # Use
 Ths container is brought up using [docker-compose](https://docs.docker.com/compose/).
 
+## Build
 Edit `torrc.bridge` or `torrc.middle` to include your nickname and contact info.
 
 Build container using `docker-compose`
@@ -15,6 +16,7 @@ Build container using `docker-compose`
 docker-compose build
 ```
 
+## Configuration
 Update the `docker-compose.yml` `command` to use either the `torrc.bridge` or `torrc.middle` config depending on the type of relay to use.
 
 To run a middle relay
@@ -23,7 +25,10 @@ To run a middle relay
 To run a bridge relay
 - `command: -f /etc/tor/torrc.bridge`
 
-Bring up the container
+## Keys
+This container bind mounts a local dir `/.keys`/ to the containers `/var/lib/tor/.tor/keys` dir in order to keep the same keys. Make sure that local permssions on `/.keys/` is set to UID `100` (the UID of the `tor` user within the container) in order to avoid permission errors.
+
+## Bring up the container
 
 ```
 docker-compose up
