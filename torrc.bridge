@@ -1,0 +1,6 @@
+ORPort 9001
+Nickname jezebel
+ContactInfo 5F70 F2AC BD58 F580 DF15  3D1F 4FA2 70F5 CD36 71F9  Micheal Waltz ecliptik@gmail.com
+BridgeRelay 1
+RelayBandwidthRate 250 KBytes
+RelayBandwidthBurst 500 KBytes

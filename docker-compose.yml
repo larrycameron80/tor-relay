@@ -1,0 +1,12 @@
+version: "2"
+services:
+  tor-relay:
+    build:
+      context: .
+    ports:
+      - "9001:9001"
+    volumes:
+      - ./keys:/var/lib/tor/.tor/keys/
+      - /etc/localtime:/etc/localtime
+    command: -f /etc/tor/torrc.middle
+    restart: always
